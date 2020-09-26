@@ -20,10 +20,10 @@ def get_details():
             start = request.form['start']
             end = request.form['end']
             
-            if file+'.txt' not in files:  #checks if file name is available 
-                raise ValueError(' Invalid File Name ')
             if file == '':    
                 file= 'file1'   #if the file_name field is empty then it takes default filename as file1.txt
+            if file+'.txt' not in files:    #checks if file name is available
+                raise ValueError(' Invalid File Name ')
             if start=='':
                 start=int('0') #if the start line no filed is empty it takes default number as 0
 
